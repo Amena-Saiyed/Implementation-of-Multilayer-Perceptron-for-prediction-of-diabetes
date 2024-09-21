@@ -1,20 +1,26 @@
-Dataset
-The dataset used is the Pima Indian Diabetes dataset, available from the LIBSVM dataset repository.
+# Implementation of Multilayer Perceptron (MLP) for prediction of diabetes
 
-Model Architecture
-Input Layer: Number of neurons equal to the number of features.
-Hidden Layer: 10 neurons with ReLU activation.
-Output Layer: 1 neuron with Sigmoid activation for binary classification.
-Optimizers
-The project compares three optimizers:
+- This project implements a Multilayer Perceptron (MLP) model using PyTorch to predict diabetes.
+- It uses the Pima Indian Diabetes dataset, which is pre-processed, split into training and testing sets, and normalized for neural network training.
+- The MLP architecture includes:
+  - Input layer with neurons equal to the input features.
+  - Hidden layer with 10 neurons and ReLU activation function.
+  - Output layer with 1 neuron and Sigmoid activation for binary classification.
+  
+- The project compares the performance of three optimizers:
+  - Adam
+  - Adagrad
+  - SGD
+- Each optimizer uses a learning rate of 0.01, and the model is trained using Binary Cross-Entropy Loss (BCELoss) for 200 epochs.
+- The training process is visualized through loss curves.
+  
+- After training, the model is evaluated on:
+  - Accuracy
+  - F1 score
+  
+- Results show that:
+  - Adagrad achieves the highest accuracy.
+  - All optimizers deliver competitive F1 scores.
+  
+- A Python script is provided to load the dataset, train the model, and visualize the performance results.
 
-Adam: Adaptive learning rate and faster convergence.
-Adagrad: Learning rate adjusts based on the frequency of updates.
-SGD: Standard stochastic gradient descent.
-Training
-The model is trained using the Binary Cross-Entropy Loss (BCELoss) function over 200 epochs. The learning rate is set to 0.01 for all optimizers.
-
-Evaluation
-The model is evaluated using two metrics:
-Accuracy: Proportion of correctly classified samples.
-F1 Score: Harmonic mean of precision and recall, useful for imbalanced data.
